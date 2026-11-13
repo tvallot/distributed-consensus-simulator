@@ -1,0 +1,21 @@
+# Build output
+build/
+out/
+*.class
+
+# IDE / editor
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# AI assistants
+.claude/
+.codex/
+CLAUDE.md
+AGENTS.md
+
+# OS
+.DS_Store
