@@ -10,7 +10,7 @@ A group of nodes must agree on a single value even though some of them can crash
 
 ## Running it
 
-Requires Java 17 or later. JBotSim is included in `lib/`.
+Requires Java 17 or later. JBotSim (LGPL v3) is included in `lib/`.
 
 ```bash
 ./run.sh            # interactive simulation with 5 nodes
