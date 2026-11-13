@@ -49,14 +49,7 @@ public final class Simulation {
         return topology;
     }
 
-    /**
-     * Asynchronous FIFO channels with random (exponential) delays.
-     *
-     * JBotSim 1.2.0 schedules a message at {@code currentTime - 1 + delay}; when the
-     * random delay rounds down to 0 (about 10% of messages with a mean of 5 ticks),
-     * that date is already in the past and the message is silently dropped.
-     * The channels of the model are reliable, so the delay is clamped to 1 tick.
-     */
+    /** Asynchronous FIFO channels with random delays of at least 1 tick (a 0 delay loses the message). */
     static class LosslessAsyncMessageEngine extends AsyncMessageEngine {
 
         LosslessAsyncMessageEngine(Topology topology, int averageDelay) {

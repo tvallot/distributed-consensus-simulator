@@ -54,10 +54,6 @@ Two majorities always overlap, so once a value has been acknowledged by a majori
 
 To make sure these tests actually detect bugs, I ran them against deliberately broken versions of the algorithm: ignoring timestamps when choosing the proposal, deciding after a single ACK, and proposing without a majority of estimates. Each of them produces agreement violations.
 
-## A note on JBotSim
-
-While testing I found that JBotSim 1.2.0's `AsyncMessageEngine` silently drops about 10% of messages. It schedules delivery at `currentTime - 1 + delay`, and when the random delay rounds down to 0 that date is already in the past. Because of this, runs occasionally deadlocked, with coordinators waiting for estimates that had been sent but never arrived. [`Simulation.java`](src/consensus/Simulation.java) works around it by forcing a minimum delay of 1 tick.
-
 ## Project structure
 
 ```
